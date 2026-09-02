@@ -586,3 +586,110 @@
   margin-bottom: 6px;
 }
 .almaprep-theme .aeo-answer p { margin: 0; color: var(--ink); font-size: 1rem; line-height: 1.6; }
+
+/* ============================================================
+   Split-Screen Auth Page Layout & Input Icons
+   ============================================================ */
+.almaprep-theme .auth-split-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1024px) {
+  .almaprep-theme .auth-split-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.almaprep-theme .auth-left-panel {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(32px, 5vw, 64px);
+  background: var(--bg-deep);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+.almaprep-theme .auth-left-panel h1,
+.almaprep-theme .auth-left-panel h2,
+.almaprep-theme .auth-left-panel h3 {
+  color: #ffffff !important;
+}
+.almaprep-theme .auth-left-panel p {
+  color: rgba(236, 253, 245, 0.85) !important;
+}
+@media (min-width: 1024px) {
+  .almaprep-theme .auth-left-panel {
+    display: flex;
+  }
+}
+
+.almaprep-theme .auth-left-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .35;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(5,150,105,.25), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(5,150,105,.15), transparent 50%);
+}
+
+.almaprep-theme .auth-right-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(24px, 4vw, 48px);
+  background: var(--bg-card);
+  position: relative;
+  min-height: 100vh;
+}
+
+.almaprep-theme .input-icon-wrapper {
+  position: relative;
+  width: 100%;
+}
+.almaprep-theme .input-icon-wrapper .input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+.almaprep-theme .input-icon-wrapper input {
+  padding-left: 42px !important;
+}
+
+.almaprep-theme .auth-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--emerald-600);
+  margin-bottom: 6px;
+}
+
+.almaprep-theme .auth-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.almaprep-theme .auth-pill-tag:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+}
+
